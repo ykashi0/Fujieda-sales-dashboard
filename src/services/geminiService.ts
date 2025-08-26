@@ -2,7 +2,7 @@
 import type { DashboardData } from '../types';
 
 // ★ AIアドバイス用 GAS の WebアプリURL
-const GEMINI_URL = 'https://script.google.com/macros/s/AKfycbzwO5YQ8xcjTgzK9_eFtfSAW2f3pmN60zZglL_iQyEIXH1Z-qL48wunkC8PHjBP84Y35w/exec';
+const GEMINI_URL = 'https://script.google.com/macros/s/AKfycbwJCGZ8Su4Whg2zJc4oIzyOHYO0XcNQw1ykhh-2vcc5vxVTERwTt0btAKMpRm0UpVc5PA/exec';
 
 export async function getAIAdvice(
   metrics: DashboardData['individualMetrics'],
