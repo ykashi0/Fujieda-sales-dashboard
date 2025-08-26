@@ -5,7 +5,7 @@ import type { DashboardData } from '../types';
 const GEMINI_URL = 'https://script.google.com/macros/s/AKfycbzwO5YQ8xcjTgzK9_eFtfSAW2f3pmN60zZglL_iQyEIXH1Z-qL48wunkC8PHjBP84Y35w/exec';
 
 export async function getAIAdvice(
-  metrics: DashboardData['individuaMetrics'],
+  metrics: DashboardData['individualMetrics'],
   periodProgress: DashboardData['periodProgress'],
   dailyRanking: DashboardData['dailySalesRanking'],
   storeName?: string
@@ -13,11 +13,9 @@ export async function getAIAdvice(
   try {
     const payload = { metrics, periodProgress, dailyRanking, storeName };
 
-    const res = await fetch(GEMINI_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ data: JSON.stringify(payload) })
-    });
+    // 🚨 GET リクエストに変更！
+    const url = `${GEMINI_URL}?data=${encodeURIComponent(JSON.stringify(payload))}`;
+    const res = await fetch(url, { method: 'GET' });
 
     if (!res.ok) {
       const text = await res.text();
