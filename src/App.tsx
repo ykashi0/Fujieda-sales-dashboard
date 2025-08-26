@@ -4,7 +4,7 @@ import IndividualMetrics from './components/IndividualMetrics.tsx';
 import SalesRanking from './components/SalesRanking.tsx';
 import AIAdvice from './components/AIAdvice.tsx';
 import { TargetIcon, ChartBarIcon, UsersIcon, SparklesIcon } from './constants.tsx';
-import { fetchDashboardData, type Store } from './services/dataService.ts';
+import { fetchDashboardData } from "./services/dataService";
 import type { DashboardData } from './types.ts';
 
 const App: React.FC = () => {
