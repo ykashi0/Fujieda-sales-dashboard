@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import GoalProgress from './components/GoalProgress.tsx';
 import IndividualMetrics from './components/IndividualMetrics.tsx';
 import SalesRanking from './components/SalesRanking.tsx';
-import AIAdvice from './components/AIAdvice.tsx';
-import { TargetIcon, ChartBarIcon, UsersIcon, SparklesIcon } from './constants.tsx';
+import Memo from './components/Memo.tsx';
+import { TargetIcon, ChartBarIcon, UsersIcon } from './constants.tsx';
 import { fetchDashboardData } from "./services/dataService";
 import type { DashboardData } from './types.ts';
 
@@ -128,12 +128,8 @@ const App: React.FC = () => {
         </div>
 
         <div className="lg:col-span-3">
-          <AIAdvice
-            title="AI アドバイス"
-            icon={<SparklesIcon />}
-            metrics={data.individualMetrics}
-            periodProgress={data.periodProgress}
-            dailyRanking={data.dailySalesRanking}
+          <Memo
+            title="メモ"
           />
         </div>
       </main>
